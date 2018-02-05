@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="nav header-div text-primary">
+      Indian Super Hero List
+    </div>
+    <div class="container inner">
+      <div class="row">
+        <div class="col-md-12 col-xs-12 table-responsive">
+            <br />
+            <label for="FilterBy">Filter by:</label>
+              <input class="textsearch" [(ngModel)]="queryString" placeholder="Search Heroes" />
+            <br />
+            <br />
+            <label for="FilteredBy" class="FilteredBy">Filtered by:{{queryString}}</label>
+          <table class="table table-danger table-responsive">
+            <tr class="thead-class">
+              <td>
+                <input type="button" [attr.Value]='ButtonText' 
+                    (click)="ShowHideDetails()" class="btn btn-primary">
+              </td>
+              <td>ID</td>
+              <td>Hero Name</td>
+              <td>Real Name</td>
+              <td>Strength</td>
+              <td>Nature</td>
+            </tr>
+            <tr *ngFor="let hero of heroes | searchfilter: queryString">
+              <td [style.visibility]="ShowHideImage">
+                <img class="img-rounded img-responsive" src="{{hero.imageUrl}}" />
+              </td>
+              <td class="text-danger">{{hero.heroId}}</td>
+              <td>
+                <a routerLink="/detail/{{hero.heroId}}">
+                  <span class="text-primary">{{hero.heroName}}</span>
+                </a>
+              </td>
+              <td class="text-danger">{{hero.realName}}</td>
+              <td class="text-danger">{{hero.heroStrength}}</td>
+              <td class="text-danger">{{hero.heroNature}}</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="nav herotitle-div text-primary">
+      Hero Detail: {{hero.heroName}}
+    </div>
+    <div class="col-md-12 herodetail-div">
+      <div class="text-div">
+        <table>
+          <tr>
+            <td class="text-primary">Hero Name: </td>
+            <td>{{hero.heroName}}</td>
+          </tr>
+          <tr>
+            <td class="text-primary">Real Name: </td>
+            <td>{{hero.realName}}</td>
+          </tr>
+          <tr>
+            <td class="text-primary">Strength: </td>
+            <td>{{hero.heroStrength}}</td>
+          </tr>
+          <tr>
+            <td class="text-primary">Nature: </td>
+            <td>{{hero.heroNature}}</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-md-12 img-div">
+        <img class="img-responsive img-rounded" src="{{hero.imageUrl}}" />
+      </div>
+      <div class="bottom-div">
+        <button class="" (click)="goBack()">
+          <b>&lt;</b>&nbsp;Back</button>
+      </div>
+    </div>
+  </div>
+</div>
